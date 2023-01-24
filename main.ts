@@ -19,7 +19,15 @@ input.onButtonPressed(Button.AB, function () {
     question = 1
 })
 input.onButtonPressed(Button.B, function () {
-    music.playMelody("C5 A B G A F G C ", 98)
+    for (let index = 0; index < 4; index++) {
+        basic.showLeds(`
+            # . # . #
+            . # . # .
+            # . # . #
+            . # . # .
+            # . # . #
+            `)
+    }
 })
 input.onGesture(Gesture.Shake, function () {
     rps = randint(1, 3)
@@ -34,6 +42,9 @@ input.onGesture(Gesture.Shake, function () {
 let rps = 0
 let question = 0
 question = 0
+loops.everyInterval(500, function () {
+	
+})
 basic.forever(function () {
     if (question == 1) {
         basic.showLeds(`
